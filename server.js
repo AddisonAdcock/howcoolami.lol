@@ -1,7 +1,6 @@
 const express = require('express');
 const axios = require('axios');
 const cors = require('cors');
-require('dotenv').config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -40,11 +39,11 @@ app.post('/coolness', async (req, res) => {
 17. **Love for nature and the environment increases coolness**: If the bio reflects an appreciation for the environment or outdoor activities, increase the score.
 18. **Aggressiveness or hostility decreases coolness**: Aggressive or confrontational language lowers the coolness score.
 19. **Community involvement increases coolness**: Mentioning volunteer work, social causes, or community engagement boosts coolness.
-20. **What somone does with their time is important**: Cool Jobs, Cool hobbies, cool things.
-21. **If you are like a movie star you are VERY COOL**: the more you are like a famous person the cooler you are.
+20. **What someone does with their time is important**: Cool Jobs, Cool hobbies, cool things.
+21. **If you are like a movie star you are VERY COOL**: The more you are like a famous person, the cooler you are.
 22. **If you have a really cool job you are cool**: If you have a job that is really cool, you are cool.
 
-Rate the coolness on a scale of 0-100, with 100 being the coolest and 0 being the least cool, Make it hard to get points, no free handouts. I want people to have to do a lot to be cool. You need to be a very harsh judge. It is very very difficult to be really cool (over 50%) Please respond with just the number.
+Rate the coolness on a scale of 0-100, with 100 being the coolest and 0 being the least cool. Make it hard to get points, no free handouts. I want people to have to do a lot to be cool. You need to be a very harsh judge. It is very, very difficult to be really cool (over 50%). Please respond with just the number.
 
 Here is the bio: "${bio}"
 `;
@@ -64,7 +63,6 @@ Here is the bio: "${bio}"
     );
 
     const gptResponse = response.data.choices[0].message.content;
-
     const coolness = parseInt(gptResponse.match(/\d+/)?.[0]);
 
     if (isNaN(coolness) || coolness < 0 || coolness > 100) {

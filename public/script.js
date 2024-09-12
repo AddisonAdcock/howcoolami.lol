@@ -1,7 +1,7 @@
 async function checkCoolness() {
     const bio = document.getElementById('bioInput').value;
     const resultDiv = document.getElementById('result');
-    resultDiv.style.display = 'block'; // Show the result div
+    resultDiv.style.display = 'block'; 
     resultDiv.innerHTML = 'Checking...';
 
     if (!bio) {
@@ -11,7 +11,7 @@ async function checkCoolness() {
 
     try {
         const response = await fetch('/coolness', {
-            method: 'POST', // Ensure the correct HTTP method is POST
+            method: 'POST', 
             headers: {
                 'Content-Type': 'application/json',
             },
