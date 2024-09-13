@@ -1,9 +1,6 @@
 const express = require('express');
 const axios = require('axios');
 const cors = require('cors');
-
-// Removed require('dotenv').config(); as Render manages environment variables.
-
 const app = express();
 const PORT = process.env.PORT || 3000;
 
@@ -53,7 +50,7 @@ Here is the bio: "${bio}"
     const response = await axios.post(
       'https://api.openai.com/v1/chat/completions',
       {
-        model: 'gpt-4',
+        model: 'gpt-3.5-turbo',
         messages: [{ role: 'user', content: prompt }],
       },
       {
