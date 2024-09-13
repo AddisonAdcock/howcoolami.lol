@@ -10,7 +10,7 @@ async function checkCoolness() {
     }
 
     try {
-        const response = await fetch('/coolness', {
+        const response = await fetch('https://howcoolami-lol.onrender.com/coolness', {
             method: 'POST', 
             headers: {
                 'Content-Type': 'application/json',
