@@ -46,7 +46,7 @@ Rate the coolness on a scale of 0-100, with 100 being the coolest and 0 being th
 
 Here is the bio: "${bio}"
 `;
-
+  
     const response = await axios.post(
       'https://api.openai.com/v1/chat/completions',
       {
@@ -55,6 +55,7 @@ Here is the bio: "${bio}"
       },
       {
         headers: {
+          // Make sure to replace this with your OpenAI API key!
           Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
           'Content-Type': 'application/json',
         },
