@@ -2,6 +2,8 @@ const express = require('express');
 const axios = require('axios');
 const cors = require('cors');
 
+// Removed require('dotenv').config(); as Render manages environment variables.
+
 const app = express();
 const PORT = process.env.PORT || 3000;
 
